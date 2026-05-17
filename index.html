@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Auto Parking</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <h1>Auto Parking</h1>
+            <div class="user-badge">
+                <span>Usuari actiu: <strong id="username-display">Carregant...</strong></span>
+                <span id="user-spot-display" class="badge">Cap plaça assignada</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="sidebar">
+            <h2>Selecciona un Parking</h2>
+            <div id="parking-list" class="parking-list">
+            </div>
+            <div class="stats-panel">
+                <h3>Estat del Pàrquing</h3>
+                <div class="stat-item">Total places: <span id="stat-total">-</span></div>
+                <div class="stat-item text-success">Lliures: <span id="stat-lliures">-</span></div>
+                <div class="stat-item text-danger">Ocupades: <span id="stat-ocupades">-</span></div>
+                <div class="progress-bar-container">
+                    <div id="stat-progress" class="progress-bar">0%</div>
+                </div>
+            </div>
+        </section>
+        <section class="main-content">
+            <div class="panel-header">
+                <h2 id="current-parking-title">Parking</h2>
+                <div class="actions-panel">
+                    <button id="btn-assignar" class="btn btn-primary">📋 Assignar Plaça</button>
+                    <button id="btn-ocupar" class="btn btn-success" disabled>🚗 Ocupar Plaça</button>
+                    <button id="btn-alliberar" class="btn btn-info" disabled>🔓 Alliberar Plaça</button>
+                    <button id="btn-incidencia" class="btn btn-warning">⚠️ Aparcar en plaça incorrecta</button>
+                </div>
+            </div>
+            <div id="spaces-grid" class="spaces-grid">
+            </div>
+            <div class="incidents-section">
+                <h3>🚨 Registre d'Incidències en Temps Real</h3>
+                <div id="incidents-log" class="incidents-log">
+                    <p class="no-incidents">No hi ha incidències actuals al sistema.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
